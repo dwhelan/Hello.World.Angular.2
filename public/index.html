@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <title>NodeJS Starter Application</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
-  </head>
-
-  <body>
-    <table>
-      <tr>
-        <td style= "width:30%;">
-          <img class = "newappIcon" src="images/newapp-icon.png">
-        </td>
-        <td>
-          <h1 id="message">Hello World!</h1>
-          <p class='description'></p> Thanks for creating a <span class = "blue">NodeJS Starter Application</span>.
-        </td>
-      </tr>
-    </table>
-  </body>
-
+<head>
+    <title>Hello World</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2.dev.js"></script>
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: { emitDecoratorMetadata: true },
+            packages: {'app': {defaultExtension: 'ts'}}
+        });
+        System.import('/app/hello_world_main')
+                .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+<my-app>Loading...</my-app>
+</body>
 </html>
