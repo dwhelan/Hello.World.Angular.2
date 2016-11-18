@@ -2,7 +2,7 @@ applications:
 - path: .
   memory: 256M
   instances: 1
-  domain: mybluemix.net
+  domain: apps.dev.gsdcf.manulife.com
   name: Hello World Angular 2
   host: Hello-World-Angular-2
   disk_quota: 1024M
