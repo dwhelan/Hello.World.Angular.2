@@ -6,6 +6,6 @@ describe('Sample test', function () {
 
 describe('Sample test with promise', function () {
   it('should pass', function () {
-    expect(Promise.resolve(40 + 2)).to.eventually.equal(42);
+    return expect(Promise.resolve(42)).to.eventually.equal(42);
   });
 });
