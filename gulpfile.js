@@ -1,6 +1,7 @@
 var gulp = require('gulp');
-var mocha = require('gulp-mocha');
 var util = require('gulp-util');
+
+var mocha = require('gulp-mocha');
 
 require('./test/support/node.js');
 
@@ -14,4 +15,12 @@ gulp.task('test', function() {
 
 gulp.task('watch-test', function () {
   gulp.watch(['public/**', 'app.js', 'test/**'], ['test']);
+});
+
+var webpack = require('webpack-stream');
+
+gulp.task('transpile', function() {
+  return gulp.src('public/src/index.js')
+    .pipe(webpack( require('./webpack.config.js') ))
+    .pipe(gulp.dest('public/dist/'));
 });
