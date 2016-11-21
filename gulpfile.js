@@ -5,7 +5,7 @@ var mocha = require('gulp-mocha');
 
 require('./test/support/node.js');
 
-gulp.task('default', ['test']);
+gulp.task('default', ['test', 'webpack']);
 
 gulp.task('test', function() {
   return gulp.src(['public/**/*.spec.js'], { read: false })
@@ -19,7 +19,7 @@ gulp.task('watch-test', function () {
 
 var webpack = require('webpack-stream');
 
-gulp.task('transpile', function() {
+gulp.task('webpack', function() {
   return gulp.src('public/src/index.js')
     .pipe(webpack( require('./webpack.config.js') ))
     .pipe(gulp.dest('public/dist/'));
