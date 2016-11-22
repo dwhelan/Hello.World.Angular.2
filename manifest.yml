@@ -2,7 +2,8 @@ applications:
 - path: .
   memory: 256M
   instances: 1
-  domain: apps.dev.gsdcf.manulife.com
-  name: Hello World Angular 2
+#  domain: apps.dev.gsdcf.manulife.com
+#  domain: api.run.pivotal.io
+  name: HelloWorld
   host: Hello-World-Angular-2
   disk_quota: 1024M
